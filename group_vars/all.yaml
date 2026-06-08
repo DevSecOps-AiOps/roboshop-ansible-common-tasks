@@ -10,3 +10,6 @@ RABBITMQ_HOST: rabbitmq.chinnu.store
 USER_HOST: user.chinnu.store
 PAYMENT_HOST: payment.chinnu.store
 FRONTEND_HOST: chinnu.store
+
+mysql_login_user: root
+mysql_root_password: RoboShop@1
