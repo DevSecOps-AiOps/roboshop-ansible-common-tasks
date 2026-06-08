@@ -6,6 +6,12 @@
     import_role:
       name: common
       tasks_from: nodejs.yaml
+  - name: systemd setup
+    import_role:
+      name: common
+      tasks_from: systemd-setup.yaml
+
+
   - name: copy mongodb repo
     copy:
       src: mongo.repo
@@ -19,11 +25,11 @@
     register: catalogue_output 
     tags:
     - mongodb
-  - name: print catalogue output
-    debug: 
-      msg: "{{ catalogue_output }}"
-    tags:
-    - mongodb
+  # - name: print catalogue output
+  #   debug: 
+  #     msg: "{{ catalogue_output }}"
+  #   tags:
+  #   - mongodb
   - name: load products
     shell: mongosh --host {{ MONGODB_HOST }} </app/db/master-data.js
     when: catalogue_output.stdout | int < 0  
