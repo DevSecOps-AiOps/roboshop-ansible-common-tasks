@@ -2,3 +2,6 @@
   hosts: catalogue
   roles:
   - demo
+
+# printing on catalogue instance hosts
+  # ansible-playbook common.yaml It will redirect to role folders in that it is looking for demo role and execute tasks under it.  
